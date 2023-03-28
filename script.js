@@ -1,10 +1,12 @@
 // your code here
 
-let submit = document.getElementById("button");
+let submit = document.getElementById("form");
 
-submit.addEventListener("click", (e)=>{
-	let h3 = document.getElementById("url");
-	h3.innerHTML = "hi";
-	// console.log(window.location.href);
-	h3.innerHTML = window.location.href;
+// document.getElementById("url").innerHTML = "name="+name+"&year="+year;
+submit.addEventListener('submit', (e)=>{
+	e.preventDefault();
+	let name = document.getElementById("name").value;
+    let year = document.getElementById("year").value;
+    document.getElementById("url").innerText="https://localhost:8080/"+"name="+name+"&year="+year;
+	
 })
